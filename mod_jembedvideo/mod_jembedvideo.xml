@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_jembedvideo</name>
+	<author>Brintek.ru</author>
+	<creationDate>2026-02-21</creationDate>
+	<copyright>(C) 2026 Brintek.ru. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>MOD_JEMBEDVIDEO_XML_DESCRIPTION</description>
+	<namespace path="src">JoomPro\Module\JEmbedVideo</namespace>
+
+	<files>
+		<filename module="mod_jembedvideo">mod_jembedvideo.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>services</folder>
+		<folder>media</folder>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="video_url"
+					type="url"
+					label="MOD_JEMBEDVIDEO_URL_LABEL"
+					description="MOD_JEMBEDVIDEO_URL_DESC"
+					required="true"
+					filter="url"
+					hint="https://youtube.com/..."
+				/>
+
+				<field
+					name="video_description"
+					type="editor"
+					label="MOD_JEMBEDVIDEO_DESCRIPTION_LABEL"
+					description="MOD_JEMBEDVIDEO_DESCRIPTION_DESC"
+					filter="safehtml"
+					buttons="true"
+					height="200"
+				/>
+
+				<field
+					name="style_mode"
+					type="list"
+					label="MOD_JEMBEDVIDEO_STYLE_LABEL"
+					description="MOD_JEMBEDVIDEO_STYLE_DESC"
+					default="basic"
+				>
+					<option value="basic">MOD_JEMBEDVIDEO_STYLE_BASIC</option>
+					<option value="inherit">MOD_JEMBEDVIDEO_STYLE_INHERIT</option>
+				</field>
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+				/>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="COM_MODULES_FIELD_MODULE_LAYOUT_LABEL"
+					description="COM_MODULES_FIELD_MODULE_LAYOUT_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

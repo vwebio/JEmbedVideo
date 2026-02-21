@@ -8,14 +8,14 @@ use JoomPro\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
 use Joomla\CMS\Language\Text;
 
 /**
- * Field for previewing the video in the admin area.
+ * Поле для предпросмотра видео в административной панели.
  *
  * @since  1.0.0
  */
 class VideoPreviewField extends FormField
 {
 	/**
-	 * The form field type.
+	 * Тип поля формы.
 	 *
 	 * @var    string
 	 * @since  1.0.0
@@ -23,15 +23,15 @@ class VideoPreviewField extends FormField
 	protected $type = 'VideoPreview';
 
 	/**
-	 * Method to get the field input markup.
+	 * Метод для получения HTML разметки поля.
 	 *
-	 * @return  string  The field input markup.
+	 * @return  string  HTML разметка поля.
 	 *
 	 * @since   1.0.0
 	 */
 	protected function getInput()
 	{
-		// Try to get from the form control.
+		// Пытаемся получить значение из формы.
 		$videoUrl = $this->form->getValue('video_url', 'params');
 		
 		if (empty($videoUrl))
@@ -39,7 +39,7 @@ class VideoPreviewField extends FormField
 			return '<div class="alert alert-info">' . Text::_('MOD_JEMBEDVIDEO_PREVIEW_NO_URL') . '</div>';
 		}
 
-		// Use the helper to get the embed URL
+		// Используем хелпер для получения embed ссылки
 		$embedUrl = JEmbedVideoHelper::getEmbedUrl($videoUrl);
 
 		if (!$embedUrl)
@@ -47,7 +47,7 @@ class VideoPreviewField extends FormField
 			return '<div class="alert alert-warning">' . Text::_('MOD_JEMBEDVIDEO_PREVIEW_INVALID_URL') . '</div>';
 		}
 
-		// Render the iframe
+		// Рендерим iframe
 		$html = [];
 		$html[] = '<div style="max-width: 500px; margin-top: 10px;">';
 		$html[] = '  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">';
@@ -59,9 +59,9 @@ class VideoPreviewField extends FormField
 	}
 	
 	/**
-	 * Method to get the field label markup.
+	 * Метод для получения разметки метки поля.
 	 *
-	 * @return  string  The field label markup.
+	 * @return  string  Разметка метки поля.
 	 *
 	 * @since   1.0.0
 	 */

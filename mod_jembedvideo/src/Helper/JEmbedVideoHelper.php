@@ -8,11 +8,11 @@ use Joomla\CMS\Factory;
 class JEmbedVideoHelper
 {
 	/**
-	 * Get the embed URL from a public video link.
+	 * Получает embed-ссылку из публичной ссылки на видео.
 	 *
-	 * @param   string  $url  The video URL provided by the user.
+	 * @param   string  $url  Ссылка на видео, предоставленная пользователем.
 	 *
-	 * @return  string|null   The embed URL or null if not recognized.
+	 * @return  string|null   Embed-ссылка или null, если не распознана.
 	 */
 	public static function getEmbedUrl(string $url): ?string
 	{
@@ -64,7 +64,7 @@ class JEmbedVideoHelper
 	}
 
 	/**
-	 * Parse Rutube URL.
+	 * Парсинг Rutube URL.
 	 *
 	 * @param   string  $url
 	 *
@@ -72,9 +72,9 @@ class JEmbedVideoHelper
 	 */
 	private static function getRutubeEmbed(string $url): ?string
 	{
-		// Match standard video ID (32 chars usually) or numeric ID
-		// Example: https://rutube.ru/video/12345.../
-		// Example: https://rutube.ru/play/embed/12345...
+		// Соответствует стандартному ID видео (обычно 32 символа) или числовому ID
+		// Пример: https://rutube.ru/video/12345.../
+		// Пример: https://rutube.ru/play/embed/12345...
 		
 		$pattern = '/rutube\.ru\/(?:video|play\/embed)\/([a-zA-Z0-9]+)/i';
 		
@@ -87,7 +87,7 @@ class JEmbedVideoHelper
 	}
 
 	/**
-	 * Parse VK Video URL.
+	 * Парсинг VK Video URL.
 	 *
 	 * @param   string  $url
 	 *
@@ -95,15 +95,15 @@ class JEmbedVideoHelper
 	 */
 	private static function getVkEmbed(string $url): ?string
 	{
-		// If it's already an embed link
+		// Если это уже embed ссылка
 		if (strpos($url, 'video_ext.php') !== false)
 		{
 			return $url;
 		}
 
-		// Public video link: https://vk.com/video-123456_789012
-		// Or: https://vk.com/video123456_789012
-		// Regex to capture oid (optional -) and id
+		// Публичная ссылка на видео: https://vk.com/video-123456_789012
+		// Или: https://vk.com/video123456_789012
+		// Regex для захвата oid (опционально -) и id
 		
 		$pattern = '/vk\.(?:com|ru)\/video(-?\d+)_(\d+)/i';
 		
@@ -112,8 +112,8 @@ class JEmbedVideoHelper
 			$oid = $matches[1];
 			$id  = $matches[2];
 			
-			// Note: For some private videos, a hash is required which cannot be derived from the public URL easily.
-			// However, for public videos, oid and id are sufficient.
+			// Примечание: Для некоторых приватных видео требуется хеш, который сложно получить из публичной ссылки.
+			// Однако, для публичных видео достаточно oid и id.
 			return "https://vk.com/video_ext.php?oid={$oid}&id={$id}&hd=2";
 		}
 

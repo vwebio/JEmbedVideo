@@ -8,9 +8,9 @@ use Joomla\DI\ServiceProviderInterface;
 return new class implements ServiceProviderInterface
 {
 	/**
-	 * Registers the service provider with a DI container.
+	 * Регистрирует сервис-провайдер в DI контейнере.
 	 *
-	 * @param   Container  $container  The DI container.
+	 * @param   Container  $container  DI контейнер.
 	 *
 	 * @return  void
 	 *

@@ -13,30 +13,30 @@ use Joomla\CMS\Helper\ModuleHelper;
 use JoomPro\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
 use Joomla\CMS\Factory;
 
-// Get the WebAssetManager
+// Получаем WebAssetManager
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
-// Get parameters
+// Получаем параметры
 $videoUrl = $params->get('video_url', '');
 $description = $params->get('video_description', '');
 $styleMode = $params->get('style_mode', 'basic');
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8');
 
-// Process video URL
+// Обрабатываем URL видео
 $embedUrl = JEmbedVideoHelper::getEmbedUrl($videoUrl);
 
-// Load CSS if basic style is selected
+// Загружаем CSS, если выбран базовый стиль
 if ($styleMode === 'basic')
 {
-	// Check if the media file exists in the standard media folder (installed mode)
-	// or fallback to the module folder (dev mode)
+	// Проверяем наличие файла стилей в стандартной папке media (установленный режим)
+	// или используем fallback в папку модуля (режим разработки)
 	if (file_exists(JPATH_ROOT . '/media/mod_jembedvideo/css/style.css'))
 	{
 		$wa->registerAndUseStyle('mod_jembedvideo.style', 'media/mod_jembedvideo/css/style.css');
 	}
 	elseif (file_exists(__DIR__ . '/media/css/style.css'))
 	{
-		// Fallback for direct folder copy without installation
+		// Fallback для прямого копирования папки без установки
 		$wa->registerAndUseStyle('mod_jembedvideo.style', 'modules/mod_jembedvideo/media/css/style.css');
 	}
 }

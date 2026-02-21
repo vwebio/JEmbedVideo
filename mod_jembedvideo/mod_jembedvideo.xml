@@ -19,7 +19,7 @@
 	</files>
 
 	<config>
-		<fields name="params">
+		<fields name="params" addfieldprefix="JoomPro\Module\JEmbedVideo\Field">
 			<fieldset name="basic">
 				<field
 					name="video_url"
@@ -29,6 +29,13 @@
 					required="true"
 					filter="url"
 					hint="https://youtube.com/..."
+				/>
+
+				<field
+					name="video_preview"
+					type="videopreview"
+					label="MOD_JEMBEDVIDEO_PREVIEW_LABEL"
+					description="MOD_JEMBEDVIDEO_PREVIEW_DESC"
 				/>
 
 				<field

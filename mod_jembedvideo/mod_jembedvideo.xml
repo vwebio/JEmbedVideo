@@ -19,7 +19,7 @@
 	</files>
 
 	<config>
-		<fields name="params" addfieldprefix="JoomPro\Module\JEmbedVideo\Field">
+		<fields name="params" addfieldprefix="Joomla\Module\JEmbedVideo\Field">
 			<fieldset name="basic">
 				<field
 					name="video_url"

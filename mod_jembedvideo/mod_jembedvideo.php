@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
-use JoomPro\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
+use Joomla\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
 use Joomla\CMS\Factory;
 
 // Получаем WebAssetManager

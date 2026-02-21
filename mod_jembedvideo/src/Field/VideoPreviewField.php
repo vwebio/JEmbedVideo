@@ -1,10 +1,10 @@
 <?php
-namespace JoomPro\Module\JEmbedVideo\Field;
+namespace Joomla\Module\JEmbedVideo\Field;
 
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Form\Field\FormField;
-use JoomPro\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
+use Joomla\Module\JEmbedVideo\Helper\JEmbedVideoHelper;
 use Joomla\CMS\Language\Text;
 
 /**
@@ -12,7 +12,7 @@ use Joomla\CMS\Language\Text;
  *
  * @since  1.0.0
  */
-class VideoPreviewField extends FormField
+class VideopreviewField extends FormField
 {
 	/**
 	 * Тип поля формы.
@@ -20,7 +20,7 @@ class VideoPreviewField extends FormField
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $type = 'VideoPreview';
+	protected $type = 'Videopreview';
 
 	/**
 	 * Метод для получения HTML разметки поля.

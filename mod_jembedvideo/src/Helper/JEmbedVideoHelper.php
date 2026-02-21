@@ -1,5 +1,5 @@
 <?php
-namespace JoomPro\Module\JEmbedVideo\Helper;
+namespace Joomla\Module\JEmbedVideo\Helper;
 
 defined('_JEXEC') or die;
 

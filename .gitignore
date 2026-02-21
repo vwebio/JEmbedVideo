@@ -33,3 +33,5 @@ vendor
 .vscode
 *.log
 *.zip
+
+history-dev.md

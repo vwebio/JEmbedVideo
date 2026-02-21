@@ -45,3 +45,17 @@
 1. Инициализирован Git репозиторий.
 2. Выполнен коммит с исправлением ошибки `ModuleHelper` (`fix: remove invalid ModuleHelper service registration`).
 3. Выполнен коммит с новым функционалом предпросмотра видео (`feat: add video preview in admin and project config`).
+
+---
+
+## Задача: Локализация комментариев в коде
+**Дата старта:** 21.02.2026 18:10
+**Дата завершения:** 21.02.2026 18:15
+
+**Описание:**
+1. Переведены на русский язык комментарии в ключевых файлах:
+   - `mod_jembedvideo.php`
+   - `services/provider.php`
+   - `src/Helper/JEmbedVideoHelper.php`
+   - `src/Field/VideoPreviewField.php`
+2. Выполнен коммит с изменениями (`docs: translate comments to Russian`).

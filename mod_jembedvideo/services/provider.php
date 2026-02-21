@@ -2,7 +2,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Extension\Service\Provider\ModuleDispatcherFactory;
-use Joomla\CMS\Extension\Service\Provider\ModuleHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 
@@ -20,6 +19,5 @@ return new class implements ServiceProviderInterface
 	public function register(Container $container)
 	{
 		$container->registerServiceProvider(new ModuleDispatcherFactory('mod_jembedvideo'));
-		$container->registerServiceProvider(new ModuleHelper());
 	}
 };

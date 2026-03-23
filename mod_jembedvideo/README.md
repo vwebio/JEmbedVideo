@@ -1,4 +1,4 @@
-# mod_jembedvideo
+# JEmbedVideo
 
 Модуль Joomla 5.2 для встраивания видео с YouTube, Rutube и VK Video с живым предпросмотром в админке и выводом на фронте.
 

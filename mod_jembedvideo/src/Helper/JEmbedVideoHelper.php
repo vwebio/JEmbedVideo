@@ -1,5 +1,5 @@
 <?php
-namespace Joomla\Module\JEmbedVideo\Helper;
+namespace Brintek\Module\JEmbedVideo\Site\Helper;
 
 defined('_JEXEC') or die;
 

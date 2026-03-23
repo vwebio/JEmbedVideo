@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0.0</version>
 	<description>MOD_JEMBEDVIDEO_XML_DESCRIPTION</description>
-	<namespace path="src">JoomPro\Module\JEmbedVideo</namespace>
+	<namespace path="src">Brintek\Module\JEmbedVideo</namespace>
 
 	<files>
 		<filename module="mod_jembedvideo">mod_jembedvideo.php</filename>
@@ -19,7 +19,7 @@
 	</files>
 
 	<config>
-		<fields name="params" addfieldprefix="Joomla\Module\JEmbedVideo\Field">
+		<fields name="params" addfieldprefix="Brintek\Module\JEmbedVideo\Site\Field">
 			<fieldset name="basic">
 				<field
 					name="video_url"
